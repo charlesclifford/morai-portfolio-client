@@ -94,13 +94,13 @@ export function PublicNavbar() {
             <ThemeToggle size="sm" />
           </div>
 
-          <Link
+          {/* <Link
             href="/admin/login"
             className="hidden sm:inline-flex p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-colors"
             title="Admin CMS"
           >
             <Lock className="w-3.5 h-3.5" />
-          </Link>
+          </Link> */}
 
           <Link
             href="/contact"
@@ -162,14 +162,15 @@ export function PublicNavbar() {
           </div>
 
           <div className="pt-2 border-t border-border flex items-center justify-between">
-            <Link
+            {/* <Link
               href="/admin/login"
               onClick={() => setMobileMenuOpen(false)}
               className="text-[11px] text-muted-foreground hover:text-foreground flex items-center gap-1 font-mono"
             >
               <Lock className="w-3 h-3" />
               <span>Admin Portal</span>
-            </Link>
+            </Link> */}
+            <div></div>
             <ThemeToggle size="sm" />
           </div>
         </div>

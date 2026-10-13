@@ -1,15 +1,21 @@
+
 "use client";
 
 import React from "react";
 import {
-  Layers,
+  Activity,
+  Bot,
+  CircuitBoard,
+  Code2,
+  Cog,
   Cpu,
-  Cloud,
-  Zap,
-  Terminal,
+  Layers,
   ShieldCheck,
+  Terminal,
   Workflow,
+  Zap,
 } from "lucide-react";
+
 import { ChromeSparkleIcon } from "@/components/ui/icons";
 import { TechIcon } from "@/components/ui/tech-icon";
 
@@ -25,153 +31,179 @@ interface IDiscipline {
 
 const DISCIPLINES: IDiscipline[] = [
   {
-    id: "frontend",
-    icon: Layers,
-    title: "Frontend Architecture & UI Engineering",
-    subtitle: "Fluid, high-performance interfaces built for scale",
+    id: "software-engineering",
+    icon: Code2,
+    title: "Software Engineering",
+    subtitle: "Building reliable software for real-world problems",
     description:
-      "Crafting responsive web applications with state-of-the-art React and Next.js architectures, fluid micro-interactions, robust state stores, and sub-second page transitions.",
+      "Developing modern web applications, backend services, and digital products with an emphasis on maintainability, usability, performance, and reliable system behavior.",
     focusAreas: [
-      "Server-Side Rendering (SSR) & Static Site Generation (SSG)",
-      "Design systems, fluid micro-interactions & accessibility",
-      "Modular state management & reactive data caching",
-      "Cross-browser performance & responsive layouts",
+      "Responsive interfaces and component-based architecture",
+      "REST APIs, authentication, and backend application design",
+      "Database modeling, data integrity, and query optimization",
+      "Testing, debugging, and maintainable code",
     ],
-    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Zustand"],
+    techStack: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "MongoDB",
+    ],
   },
   {
-    id: "backend",
-    icon: Cpu,
-    title: "Backend & Distributed Systems",
-    subtitle: "Resilient APIs and scalable data pipelines",
+    id: "robotics",
+    icon: Bot,
+    title: "Robotics & Intelligent Systems",
+    subtitle: "Connecting software, sensors, and physical machines",
     description:
-      "Designing high-concurrency microservices, clean architecture REST and GraphQL APIs, caching layers, and database schemas engineered for reliability and zero downtime.",
+      "Exploring how software and hardware work together to enable robots to perceive their surroundings, process information, and perform useful physical tasks.",
     focusAreas: [
-      "RESTful & GraphQL API design with clean layered architecture",
-      "Database schema modeling, indexing & optimization (SQL & NoSQL)",
-      "High-throughput caching and in-memory stores with Redis",
-      "JWT / OAuth authentication, RBAC & security compliance",
+      "Robot software architecture and system integration",
+      "Sensor data acquisition and interpretation",
+      "Robot kinematics and motion-control fundamentals",
+      "Autonomous-system concepts and real-time behavior",
+    ],
+    techStack: ["C++", "ROS 2", "Linux", "Git"],
+  },
+  {
+    id: "mechatronics",
+    icon: Cog,
+    title: "Mechatronics & Control Systems",
+    subtitle: "Integrating mechanical, electrical, and digital systems",
+    description:
+      "Applying multidisciplinary engineering principles to the design and understanding of systems that combine mechanical components, electronics, sensing, actuation, and control.",
+    focusAreas: [
+      "Sensors, actuators, and electromechanical components",
+      "Feedback control and system response",
+      "Mechanical and electrical system integration",
+      "System modeling, testing, and troubleshooting",
+    ],
+    techStack: ["C++", "Arduino", "MATLAB", "Simulink"],
+  },
+  {
+    id: "embedded-systems",
+    icon: CircuitBoard,
+    title: "Embedded Systems & IoT",
+    subtitle: "Software that interacts directly with hardware",
+    description:
+      "Working with the principles behind embedded computing, microcontrollers, hardware interfaces, and connected devices that collect data and respond to their environment.",
+    focusAreas: [
+      "Microcontroller programming fundamentals",
+      "Digital inputs, outputs, and peripheral interfaces",
+      "Serial communication and hardware integration",
+      "Device monitoring and connected-system concepts",
+    ],
+    techStack: ["C", "C++", "Arduino", "ESP32"],
+  },
+  {
+    id: "automation-integration",
+    icon: Workflow,
+    title: "Automation & System Integration",
+    subtitle: "Making interconnected systems work together",
+    description:
+      "Bringing hardware, software, and operational processes together to reduce repetitive work, improve consistency, and create systems that are easier to monitor and maintain.",
+    focusAreas: [
+      "Workflow automation and event-driven processes",
+      "Communication between software and devices",
+      "System testing and fault diagnosis",
+      "Deployment, monitoring, and operational reliability",
     ],
     techStack: [
       "Node.js",
-      "Express",
       "TypeScript",
-      "PostgreSQL",
-      "MongoDB",
-      "Redis",
+      "REST APIs",
+      "GitHub Actions",
     ],
-  },
-  {
-    id: "cloud-devops",
-    icon: Cloud,
-    title: "Cloud Infrastructure & CI/CD Pipelines",
-    subtitle: "Automated, observable, and containerized deployments",
-    description:
-      "Setting up automated continuous integration and continuous deployment pipelines, Docker containerization, and cloud hosting infrastructure built for 99.9% uptime.",
-    focusAreas: [
-      "Automated GitHub Actions CI/CD workflows",
-      "Docker containerization & multi-stage build optimization",
-      "Cloud deployments on AWS, Vercel, and modern edge platforms",
-      "Uptime monitoring, error tracing & centralized logging",
-    ],
-    techStack: ["Docker", "GitHub Actions", "AWS", "Vercel", "Linux"],
-  },
-  {
-    id: "performance",
-    icon: Zap,
-    title: "Performance Optimization & System Auditing",
-    subtitle: "Sub-second TTFB and green Core Web Vitals",
-    description:
-      "Profiling codebases, resolving memory leaks, optimizing database queries, and streamlining JavaScript bundles to ensure blisteringly fast load times and high conversions.",
-    focusAreas: [
-      "Lighthouse 95+ Core Web Vitals optimization (LCP, FID, CLS)",
-      "JavaScript bundle splitting, tree-shaking & lazy loading",
-      "Database query execution analysis & indexing strategy",
-      "Code quality audits & technical debt refactoring",
-    ],
-    techStack: ["Lighthouse", "Web Vitals", "Turbopack", "Profiling Tools"],
   },
 ];
 
 const PRINCIPLES = [
   {
     icon: Terminal,
-    title: "Type Safety & Clean Code",
+    title: "Clear Engineering",
     description:
-      "Strict TypeScript end-to-end with clear architectural boundaries, predictable data contracts, and maintainable modular code.",
+      "Readable implementations, clear interfaces, and well-defined system boundaries make projects easier to test, understand, and extend.",
   },
   {
-    icon: Zap,
-    title: "Performance by Default",
+    icon: Activity,
+    title: "Test and Validate",
     description:
-      "Zero unnecessary bloat. Optimized bundle sizes, efficient database querying, and asset caching for instant response times.",
+      "Use measurable requirements, repeatable tests, and real-world validation to understand how a system behaves and where it needs improvement.",
   },
   {
     icon: Workflow,
-    title: "Automated Workflows",
+    title: "Systems Thinking",
     description:
-      "Automated linting, testing, and continuous deployment so every commit is verified before hitting production.",
+      "Consider how software, hardware, data, and users interact instead of optimizing one component without considering the complete system.",
   },
   {
     icon: ShieldCheck,
-    title: "Security & Reliability",
+    title: "Safety and Reliability",
     description:
-      "Sanitized inputs, robust authentication flows, rate limiting, and defensive error handling across all system boundaries.",
+      "Account for failure conditions, data integrity, defensive error handling, and appropriate safety measures throughout the engineering process.",
   },
 ];
 
 export function ServicesView() {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 space-y-20 sm:space-y-28">
-      {/* ─────────────────────────────────────────────────────────────
-          1. EXPERTISE HERO & HEADER
-      ───────────────────────────────────────────────────────────── */}
+      {/* Expertise hero */}
       <section className="space-y-6">
         <div className="flex items-center gap-2 text-primary">
           <ChromeSparkleIcon className="w-4 h-4" />
           <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground font-semibold">
-            Services & Technical Capabilities
+            Engineering Disciplines
           </span>
         </div>
 
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-foreground tracking-tight leading-tight">
-              Architecting for <br />
+              Engineering Across
+              <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-violet-500">
-                Scale & Reliability.
+                Software & Intelligent Systems.
               </span>
             </h1>
+
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              High-caliber technical execution across all layers of the stack.
-              From rapid MVP deployments to enterprise cloud architectures and
-              scalable backend microservices.
+              Exploring the intersection of software engineering,
+              mechatronics, and robotics to build practical solutions
+              that connect digital systems with the physical world.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          2. CORE DISCIPLINES
-      ───────────────────────────────────────────────────────────── */}
+      {/* Core engineering disciplines */}
       <section className="space-y-8">
         <div className="border-b border-border/80 pb-4">
           <div className="flex items-center gap-2 text-primary pb-1">
-            <ChromeSparkleIcon className="w-3.5 h-3.5" />
+            <Layers className="w-3.5 h-3.5" />
             <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground font-semibold">
-              Disciplines
+              Core Disciplines
             </span>
           </div>
+
           <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-            Core Engineering Pillars
+            Where Engineering Meets Practice
           </h2>
+
+          <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-2xl">
+            From application development to hardware integration,
+            each discipline contributes a different perspective to
+            solving engineering problems.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {DISCIPLINES.map((item, idx) => {
             const Icon = item.icon;
+
             return (
-              <div
+              <article
                 key={item.id}
                 className="p-6 sm:p-8 rounded-3xl bg-card border border-border space-y-5 hover:border-primary/40 transition-all shadow-xs"
               >
@@ -179,8 +211,9 @@ export function ServicesView() {
                   <div className="w-10 h-10 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
                     <Icon className="w-5 h-5" />
                   </div>
+
                   <span className="text-xs font-mono text-muted-foreground font-semibold">
-                    0{idx + 1}
+                    {String(idx + 1).padStart(2, "0")}
                   </span>
                 </div>
 
@@ -188,6 +221,7 @@ export function ServicesView() {
                   <h3 className="text-lg font-bold text-foreground">
                     {item.title}
                   </h3>
+
                   <p className="text-xs text-primary font-mono font-medium">
                     {item.subtitle}
                   </p>
@@ -199,11 +233,15 @@ export function ServicesView() {
 
                 <div className="pt-3 border-t border-border/60 space-y-2">
                   <span className="text-[11px] font-mono uppercase text-foreground font-semibold block">
-                    Core Focus:
+                    Focus Areas
                   </span>
-                  <ul className="space-y-1 text-xs text-muted-foreground">
+
+                  <ul className="space-y-2 text-xs text-muted-foreground">
                     {item.focusAreas.map((area) => (
-                      <li key={area} className="flex items-start gap-2">
+                      <li
+                        key={area}
+                        className="flex items-start gap-2"
+                      >
                         <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
                         <span>{area}</span>
                       </li>
@@ -222,48 +260,73 @@ export function ServicesView() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          3. ENGINEERING PRINCIPLES & STANDARDS
-      ───────────────────────────────────────────────────────────── */}
+      {/* Engineering principles */}
       <section className="space-y-8">
         <div className="border-b border-border/80 pb-4">
           <div className="flex items-center gap-2 text-primary pb-1">
-            <Workflow className="w-3.5 h-3.5" />
+            <Zap className="w-3.5 h-3.5" />
             <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground font-semibold">
-              Standards
+              Engineering Principles
             </span>
           </div>
+
           <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-            How I Build Software
+            How I Approach Engineering
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {PRINCIPLES.map((principle) => {
             const Icon = principle.icon;
+
             return (
-              <div
+              <article
                 key={principle.title}
                 className="p-6 rounded-3xl bg-card border border-border space-y-3"
               >
                 <div className="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                   <Icon className="w-4 h-4" />
                 </div>
+
                 <h3 className="text-sm font-bold text-foreground">
                   {principle.title}
                 </h3>
+
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   {principle.description}
                 </p>
-              </div>
+              </article>
             );
           })}
+        </div>
+      </section>
+
+      {/* Closing statement */}
+      <section className="pb-4">
+        <div className="rounded-3xl border border-border bg-card p-6 sm:p-8 space-y-3">
+          <div className="flex items-center gap-2 text-primary">
+            <Cpu className="w-4 h-4" />
+            <span className="text-xs font-mono uppercase tracking-widest font-semibold">
+              One Engineering Mindset
+            </span>
+          </div>
+
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
+            Turning ideas into working systems.
+          </h2>
+
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">
+            Good engineering is more than writing code or assembling
+            components. It means understanding the problem, choosing
+            appropriate tools, testing assumptions, and building
+            solutions that work reliably in their intended environment.
+          </p>
         </div>
       </section>
     </div>
