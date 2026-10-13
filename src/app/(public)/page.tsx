@@ -2,22 +2,26 @@ import { Metadata } from "next";
 import { HomeView } from "@/components/public/views/home-view";
 
 export const metadata: Metadata = {
-  title: "Developer Portfolio | Full-Stack & Distributed Systems Engineer",
+  title: "Mechatronics, Robotics & Software Engineer",
   description:
-    "Engineering high-throughput systems, resilient web architectures, and high-performance digital flagships for enterprise and venture-backed companies.",
+    "Engineering intelligent machines, robotic systems, embedded solutions, and high-performance software. Combining mechanical, electrical, control systems, and software engineering to build practical real-world solutions.",
   keywords: [
-    "Full-Stack Architect",
+    "Mechatronics Engineer",
+    "Robotics Engineer",
     "Software Engineer",
-    "Next.js Architect",
-    "Distributed Systems",
-    "TypeScript",
-    "React",
-    "Node.js",
+    "Robotics Software Developer",
+    "Embedded Systems",
+    "Automation and Control Systems",
+    "Robot Operating System (ROS)",
+    "Internet of Things (IoT)",
+    "Full-Stack Development",
+    "Artificial Intelligence",
+    "Control Systems Engineering",
   ],
   openGraph: {
-    title: "Developer Portfolio | Full-Stack Engineer",
+    title: "Mechatronics, Robotics & Software Engineer",
     description:
-      "Engineering high-throughput systems and resilient web flagships.",
+      "Building intelligent machines, robotic systems, embedded solutions, and software that connects the digital and physical worlds.",
     type: "website",
   },
 };

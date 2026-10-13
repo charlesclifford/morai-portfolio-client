@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import { ServicesView } from "@/components/public/views/services-view";
 
 export const metadata: Metadata = {
-  title: "Expertise & Capabilities | Full-Stack Engineering",
+  title: "Engineering Services | Software, Robotics & Automation",
   description:
-    "Explore full-stack architectures, distributed backend systems, cloud DevOps pipelines, and technical capabilities.",
+    "Discover software development, intelligent system design, robotics engineering, embedded systems, and automation capabilities for practical engineering challenges.",
 };
 
 export default function ServicesPage() {

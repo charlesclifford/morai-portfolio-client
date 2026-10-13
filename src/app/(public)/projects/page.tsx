@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import { ProjectsCatalogView } from "@/components/public/views/projects-catalog-view";
 
 export const metadata: Metadata = {
-  title: "Selected Works & Case Studies | Senior Staff Full-Stack Architect",
+  title: "Projects & Case Studies | Robotics, Mechatronics & Software",
   description:
-    "Complete portfolio catalog of production web applications, open-source libraries, cloud architectures, and client projects.",
+    "Explore engineering projects, software applications, robotics concepts, embedded systems, automation solutions, and practical implementations across digital and physical systems.",
 };
 
 export default function ProjectsPage() {
