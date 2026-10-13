@@ -265,7 +265,7 @@ export function PublicFooter() {
             <a
               href={
                 process.env.NEXT_PUBLIC_CREATOR_URL ||
-                "https://github.com/simkidd"
+                "https://ionidev.com"
               }
               target="_blank"
               rel="noopener noreferrer"
